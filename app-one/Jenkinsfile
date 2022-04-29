@@ -1,0 +1,13 @@
+pipeline {
+  agent any
+  stages {
+    stage('stage one') {
+      when {
+        changeset "app-one/**"
+      }
+      steps {
+        sh './app-one/src/script.sh'
+      }
+    }
+  }
+}
